@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Earlham Troop 115 — Scouts BSA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --card: #1e293b;     /* slate-800 */
+      --muted: #e2e8f0;    /* gray-200 */
+      --text: #f8fafc;     /* gray-50 */
+      --accent: #facc15;   /* yellow-400 */
+      --accent-2: #22c55e; /* green-500 */
+      --ring: rgba(250,204,21,.45);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%; margin:0;}
+    body{
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color:var(--text);
+      overflow-x:hidden;
+    }
+    /* Background video */
+    #bg-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    .container{max-width:960px; margin:0 auto; padding:32px 20px 64px; background:rgba(0,0,0,0.6); border-radius:12px; position:relative; z-index:1}
+    header{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:24px}
+    .brand{display:flex; align-items:center; gap:14px}
+    .logo img{width:120px; height:auto; box-shadow:0 6px 20px rgba(0,0,0,.35)}
+    h1{font-size:clamp(1.6rem, 2.8vw, 2.2rem); margin:0; letter-spacing:.2px}
+    .tag{color:var(--muted); font-weight:600; font-size:.9rem}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.1), rgba(255,255,255,.05)); border:1px solid rgba(255,255,255,.18); border-radius:18px; padding:20px 22px; box-shadow:0 10px 30px rgba(0,0,0,.4); backdrop-filter:saturate(120%) blur(6px)}
+    .grid{display:grid; grid-template-columns:1fr; gap:16px}
+
+    .cta{
+      display:inline-flex; align-items:center; gap:10px; text-decoration:none;
+      background:linear-gradient(135deg, var(--accent), #fbbf24);
+      color:#111; font-weight:800; padding:12px 16px; border-radius:12px; box-shadow:0 10px 24px rgba(251,191,36,.45);
+      transition:transform .06s ease;
+    }
+    .cta:hover{transform:translateY(-1px)}
+    .cta span.badge{background:#fef9c3; color:#713f12; font-weight:700; font-size:.78rem; padding:2px 8px; border-radius:999px}
+
+    .lead{font-size:1.05rem; line-height:1.6; color:#fef9c3}
+    .muted{color:var(--muted)}
+
+    /* FAQ */
+    details{border:1px solid rgba(255,255,255,.25); border-radius:14px; padding:14px 16px; background:linear-gradient(180deg, rgba(255,255,255,.15), rgba(255,255,255,.05))}
+    summary{font-weight:700; cursor:pointer; list-style:none; outline:none}
+    summary::-webkit-details-marker{display:none}
+    details + details{margin-top:12px}
+    details[open]{
+      box-shadow:0 0 0 3px var(--ring);
+    }
+    .answer{margin:10px 0 0; color:var(--text); line-height:1.65}
+
+    footer{margin-top:36px; text-align:center; color:var(--muted); font-size:.9rem}
+  </style>
+</head>
+<body>
+  <!-- Background video element -->
+  <iframe id="bg-video" src="https://www.youtube.com/embed/8teadlOVgIA?autoplay=1&mute=1&loop=1&playlist=8teadlOVgIA&controls=0&showinfo=0&modestbranding=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo"><img src="images/logo.png" alt="Troop 115 Logo"></div>
+        <div>
+          <h1>Earlham Troop 115</h1>
+          <div class="tag">Scouts BSA • Earlham, Iowa</div>
+        </div>
+      </div>
+      <a class="cta" href="https://my.scouting.org/more-info/587bfa00-bc5f-43cb-9474-131f073c76e4&beascout=true?_gl=1*6k2ekt*_gcl_aw*R0NMLjE3NTYyNDk1MzAuQ2p3S0NBand0clhGQmhCaUVpd0FFS2VuMXhXeDFDRDY1a0k2ZG5xUWRkSlF0M3hjSGlUSVVGUzZtUXNHSGpMRGFSc2FKNDJRd0JmeFJSb0NnUnNRQXZEX0J3RQ..*_gcl_au*MzgyMDcxNjkyLjE3NTYyNDk1MzA.*_ga*MTIzMjgwOTczNy4xNzU2MjQ5NTMw*_ga_61ZEHCVHHS*czE3NTY0MzQwNjMkbzIkZzEkdDE3NTY0MzQwODUkajM4JGwwJGgw" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z"></path><path d="M5 5h6v2H7v10h10v-4h2v6H5z"></path></svg>
+        <span>Join / Learn More</span>
+        <span class="badge">BeAScout</span>
+      </a>
+    </header>
+
+    <section class="card" aria-labelledby="about-title">
+      <h2 id="about-title">About Troop 115</h2>
+      <p class="lead">
+        Earlham Troop 115, based in Earlham, Iowa, is dedicated to helping young people grow into strong leaders and responsible citizens. Through camping, service projects, outdoor adventures, and the principles of the Scout Oath and Law, our Scouts learn teamwork, self-reliance, and the value of giving back to their community. Troop 115 provides a place for youth to challenge themselves, build lasting friendships, and develop skills that last a lifetime.
+      </p>
+    </section>
+
+    <section class="grid" aria-labelledby="faq-title" style="margin-top:20px">
+      <div class="card">
+        <h2 id="faq-title" style="margin-top:0">Frequently Asked Questions</h2>
+
+        <details>
+          <summary>Who can join Troop 115?</summary>
+          <div class="answer">Any youth ages 11–17, or who have completed 5th grade, can join Scouts BSA.</div>
+        </details>
+
+        <details>
+          <summary>When and where does the troop meet?</summary>
+          <div class="answer">Troop 115 meets weekly in Earlham, Iowa. Meeting times and locations may vary depending on activities.</div>
+        </details>
+
+        <details>
+          <summary>What activities does the troop do?</summary>
+          <div class="answer">Scouts participate in camping, hiking, service projects, merit badge advancement, community events, and high-adventure trips.</div>
+        </details>
+
+        <details>
+          <summary>How much does Scouting cost?</summary>
+          <div class="answer">Annual dues cover BSA registration, troop expenses, and program materials. Additional costs may apply for campouts or special trips, but fundraising opportunities are available.</div>
+        </details>
+
+        <details>
+          <summary>Do parents need to be involved?</summary>
+          <div class="answer">Yes! Troop 115 encourages parents to volunteer as leaders, committee members, or helpers on outings. Family support is key to a strong program.</div>
+        </details>
+
+        <details>
+          <summary>Do Scouts have to buy uniforms?</summary>
+          <div class="answer">Yes. Scouts are expected to wear the official BSA uniform shirt, with troop-specific patches. Additional gear (like camping equipment) may also be needed.</div>
+        </details>
+
+        <details>
+          <summary>What is the time commitment?</summary>
+          <div class="answer">Scouts attend weekly meetings, monthly campouts, and service projects. Each Scout can participate at the level that works for them, but active involvement is encouraged for advancement.</div>
+        </details>
+
+        <details>
+          <summary>Can girls join Troop 115?</summary>
+          <div class="answer">Scouts BSA is open to both boys and girls. Troop 115 is currenlty a boy troop, but if you are intresed we would love to get a girl troop started.</div>
+        </details>
+
+        <details>
+          <summary>How does advancement work?</summary>
+          <div class="answer">Scouts progress through ranks (Scout, Tenderfoot, Second Class, First Class, Star, Life, and Eagle) by learning skills, demonstrating leadership, and serving their community.</div>
+        </details>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Earlham Troop 115 • Scouts BSA
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
